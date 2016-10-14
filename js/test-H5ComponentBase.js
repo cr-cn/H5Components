@@ -7,5 +7,11 @@ var H5ComponentBase = function(cfg) {
     var cls = 'h5_component_' + cfg.type;
     var component = $('<div class="h5_component ' + cls + '" id="' + id + '"></div>');
     cfg.text && component.text(cfg.text);
+    // 考虑到iphone的屏幕关系
+    cfg.width && component.width(cfg.width / 2);
+    cfg.height && component.height(cfg.height / 2);
+
+    cfg.css && component.css(cfg.css);
+    cfg.bg && component.css('backgroundImage', 'url(' + cfg.bg + ')');
     return component
 }
