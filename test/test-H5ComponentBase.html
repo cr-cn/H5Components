@@ -25,8 +25,8 @@
     }
     </style>
     <script src='../js/lib/jquery.js'></script>
-    <script src='../js/test-H5ComponentBase.js'></script>
-    <link rel="stylesheet" href="../css/test-H5ComponentBase.css">
+    <script src='../js/H5ComponentBase.js'></script>
+    <link rel="stylesheet" href="../css/H5ComponentBase.css">
 </head>
 
 <body>
@@ -41,16 +41,15 @@
 
         bg: 'p1_people.png',
         css: {
-            left: 50,
-            top: 50,
+            bottom: 0,
             opacity: 0
         },
         animateIn: {
-            top: 50,
+            bottom: 80,
             opacity: 1
         },
         animateOut: {
-            top: 150,
+            bottom: 0,
             opacity: 0
 
         },
@@ -59,6 +58,12 @@
     }
     var h5 = new H5ComponentBase('myName', cfg);
     $('.iphone').append(h5);
+
+    var leave = true;
+    $('body').click(function() {
+        leave = !leave;
+        $('.h5_component').trigger(leave ? 'onLeave' : 'onLoad');
+    });
     </script>
 </body>
 
