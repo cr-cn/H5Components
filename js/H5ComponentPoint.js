@@ -12,12 +12,17 @@ var H5ComponentPoint = function(name, cfg) {
         point.append(name);
 
         var per = (item[1] / base * 100) + '%';
-        // console.log(per);
+        var perx = item[1] / base;
+        // console.log(perx);
 
         point.width(per).height(per);
 
         if (item[2]) {
-            point.css('background-color', item[2]);
+            // point.css('background-color', item[2]);
+            point.css({
+                'background-color': item[2],
+                'font-size': perx * 22 + 'px'//确保每个point中的文字大小随图形改变而改变
+            })
         }
         if (item[3] !== undefined && item[4]) {
             point.css({
