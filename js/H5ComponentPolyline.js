@@ -35,7 +35,9 @@ var H5ComponentPolyline = function(name, cfg) {
         if (cfg.data[i]) {
             var text = $('<div class="text">');
             text.text(cfg.data[i][0]);
-            text.css('width', text_w / 2).css('left', x / 2 - text_w / 4 + text_w / 2);
+            text.css('width', text_w / 2)
+                .css('left', x / 2 - text_w / 4 + text_w / 2)
+                .css('-webkit-transition', 'all 1s ' + (1.5 + i * .1) + 's');
             component.append(text);
         }
     }
