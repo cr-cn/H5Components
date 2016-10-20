@@ -64,7 +64,7 @@ var H5ComponentRadar = function(name, cfg) {
         //输出项目文字
         var text = $('<div class="text">');
         text.text(cfg.data[i][0]);
-        text.css('transition', 'all .5s ' + i * .1 + 's');
+        text.css('transition', 'all .5s ' + i * .3 + 's');
 
         // text.css('left', x/2);
         // text.css('top', y / 2);
@@ -97,7 +97,7 @@ var H5ComponentRadar = function(name, cfg) {
     cns.width = ctx.width = w;
     cns.height = ctx.height = h;
     component.append(cns);
-    ctx.strokeStyle = '#f00';
+    ctx.strokeStyle = '#ff7676';
     var draw = function(per) {
         if (per >= 1) {
             component.find('.text').css('opacity', 1);
@@ -107,6 +107,7 @@ var H5ComponentRadar = function(name, cfg) {
         }
         ctx.clearRect(0, 0, w, h);
         //输出数据的折线
+        ctx.beginPath();
         for (var i = 0; i < step; i++) {
             var rad = (2 * Math.PI / 360) * (360 / step) * i;
             var rate = cfg.data[i][1] * per;
@@ -133,7 +134,7 @@ var H5ComponentRadar = function(name, cfg) {
         }
     }
 
-    draw();
+    draw(.5);
 
     //雷达图的生长动画
     component.on('onLoad', function() {
