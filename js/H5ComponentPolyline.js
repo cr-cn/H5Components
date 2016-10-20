@@ -65,10 +65,7 @@ var H5ComponentPolyline = function(name, cfg) {
 
         var x = 0;
         var y = 0;
-        // ctx.moveTo(10, 10);
-        // ctx.arc(10, 10, 5, 0, 2 * Math.PI);
-        // step = cfg.data.length + 1;
-        // 
+
         var row_w = (w / (cfg.data.length + 1));
         //画点
         for (i in cfg.data) { //这里的i就是这个cfg.data数组的下标0,1,2,3...
