@@ -3,26 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-    <title>test-H5</title>
-    <!-- 基本资源库 -->
-    <script src='../js/lib/jquery.js'></script>
-    <script src='../js/lib/jquery-ui.min.js'></script>
-    <script src='../js/lib/jquery.fullPage.js'></script>
-    <!-- H5对象资源&管理内容：页面组件 -->
-    <script src='../js/H5.js'></script>
-    <link rel="stylesheet" href="../css/H5.css">
-    <script src='../js/H5ComponentBase.js'></script>
-    <link rel="stylesheet" href="../css/H5ComponentBase.css">
+    <title>最终整合页面</title>
+    <script src='js/lib/jquery.js'></script>
+    <script src='js/lib/jquery-ui.min.js'></script>
+    <script src='js/lib/jquery.fullPage.js'></script>
+    <!-- 加载H5组件相关资源 -->
+    <script>
+    var res = [
+        'Base', 'Bar', 'Point', 'Polyline', 'Radar', 'Pie'
+    ];
+    var html = [];
+    for (i in res) {
+        html.push('<script src="js/H5Component' + res[i] + '.js"><\/script>');
+        html.push('<link rel="stylesheet" href="css/H5Component' + res[i] + '.css">');
+    }
+    document.write(html.join(''));
+    </script>
+    <script src='js/H5.js'></script>
+    <link rel="stylesheet" href="css/H5.css">
+    <!-- 页面逻辑的样式 -->
     <style>
     body {
         margin: 0;
         padding: 0;
     }
     </style>
-</head>
-
-<body>
+    <!-- 主要逻辑 -->
     <script>
     $(function() {
         var h5 = new H5();
@@ -74,6 +80,9 @@
 
     });
     </script>
+</head>
+
+<body>
 </body>
 
 </html>
