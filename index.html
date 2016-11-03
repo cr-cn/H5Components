@@ -39,6 +39,7 @@
     
     .h5_component_name_slogan {
         -webkit-animation: rock 2s infinite 2s;
+        /*无限循环 infinite*/
     }
     
     @-webkit-keyframes rock {
@@ -168,6 +169,71 @@
             .addPage()
             .addComponent('caption', {
                 text: '核心理念'
+            })
+            .addComponent('text', {
+                width: 500,
+                height: 30,
+                center: true,
+                text: 'IT教育网＝只学有用的',
+                css: {
+                    opacity: 0,
+                    textAlign: 'center',
+                    color: 'red',
+                    fontSize: '26px'
+                },
+                animateIn: {
+                    opacity: 1,
+                    top: 120
+                },
+                animateOut: {
+                    opacity: 0,
+                    top: 240
+                }
+            })
+            .addComponent('description', {
+                center: true,
+                width: 481,
+                height: 295,
+                bg: 'img/description_bg.gif',
+                css: {
+                    opacity: 0,
+                    padding: '15px 10px 10px',
+                    color: '#fff',
+                    fontSize: '15px',
+                    lineHeight: '18px',
+                    textAlign: 'justify',
+                    top: 240
+                },
+                text: '浙江省杭州市萧山区北干街道金城路1038号水务大厦A座',
+                animateIn: {
+                    opacity: 1,
+                    top: 160
+                },
+                animateOut: {
+                    opacity: 0,
+                    top: 240
+                },
+                delay: 500
+
+            })
+            .addComponent('people', {
+                center: true,
+                width: 515,
+                height: 305,
+                bg: 'img/p1_people.png',
+                css: {
+                    opacity: 0,
+                    bottom: 0
+                },
+                animateIn: {
+                    opacity: 1,
+                    bottom: 40
+                },
+                animateOut: {
+                    opacity: 0,
+                    bottom: 30
+                },
+                delay: 100
             })
             .loader(2);
 
