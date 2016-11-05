@@ -22,6 +22,10 @@ var H5 = function() {
             }
             this.el.append(page);
             this.page.push(page);
+
+            if (typeof this.whenAddPage === 'function') {
+                this.whenAddPage()
+            }
             return this;
         }
         // 新增一个组件
@@ -36,6 +40,10 @@ var H5 = function() {
         switch (cfg.type) {
             case 'base':
                 component = new H5ComponentBase(name, cfg);
+                break;
+
+            case 'polyline':
+                component = new H5ComponentPolyline(name, cfg);
                 break;
             default:
         }
