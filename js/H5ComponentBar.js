@@ -3,7 +3,7 @@ var H5ComponentBar = function(name, cfg) {
     var component = new H5ComponentBase(name, cfg);
 
     $.each(cfg.data, function(index, item) {
-        console.log(item);
+        // console.log(item);
 
         var line = $('<div class="line">');
         var name = $('<div class="name">');

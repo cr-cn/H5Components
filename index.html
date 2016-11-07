@@ -309,13 +309,12 @@
                 text: 'Java课程占到40%',
                 css: {
                     opacity: 0,
-                    top: 140,
+                    top: 160,
                     textAlign: 'center',
                     width: '100%',
                     color: '#ff7676'
                 },
                 animateIn: {
-                    top: 160,
                     opacity: 1
                 },
                 animateOut: {
@@ -329,41 +328,91 @@
             .addComponent('caption', {
                 text: '移动开发课程资源'
             }) //pie
-            .addComponent('pie',{
-        type: 'pie',
-
-        width: 400,
-        height: 400,
-        data: [
-            ['Java', .4, '#ff7676'],
-            ['HTML', .2],
-            ['jQuery', .05],
-            ['PHP', .2],
-            ['CSS', .15],
-        ],
-
-        css: {
-            top: 200,
-            // opacity: 0
-        },
-        // animateIn: {
-        //     top: 200,
-        //     opacity: 1
-        // },
-        // animateOut: {
-        //     top: 100,
-        //     opacity: 0
-        // },
-
-        center: true
-
-    })
+            .addComponent('pie', {
+                type: 'pie',
+                width: 400,
+                height: 400,
+                data: [
+                    ['Java', .4, '#ff7676'],
+                    ['HTML', .2],
+                    ['jQuery', .05],
+                    ['PHP', .2],
+                    ['CSS', .15],
+                ],
+                css: {
+                    top: 200,
+                },
+                center: true
+            })
+            .addComponent('msg', {
+                text: 'Java课程占到40%',
+                css: {
+                    opacity: 0,
+                    bottom: 100,
+                    textAlign: 'center',
+                    width: '100%',
+                    color: '#ff7676',
+                },
+                animateIn: {
+                    opacity: 1
+                },
+                animateOut: {
+                    opacity: 0
+                },
+                delay: 1000
+            })
 
 
         .addPage()
             .addComponent('caption', {
                 text: '前端开发课程'
             }) //bar(bar_v)
+            .addComponent('bar', {
+                type: 'bar',
+
+                width: 530,
+                height: 600,
+                data: [
+                    ['Javascript', .4, '#ff7676'],
+                    ['HTML/CSS', .2],
+                    ['jQuery', .35],
+                    ['AngularJs', .09],
+                    ['HTML5', .3],
+                    ['Bootstrap', .05],
+                    ['CSS3', .1]
+                ],
+
+                css: {
+                    top: 100,
+                    opacity: 0
+                },
+                animateIn: {
+                    top: 200,
+                    opacity: 1
+                },
+                animateOut: {
+                    top: 100,
+                    opacity: 0
+                },
+                center: true
+            })
+            .addComponent('msg', {
+                text: 'JavaScript课程占到40%',
+                css: {
+                    opacity: 0,
+                    bottom: 100,
+                    textAlign: 'center',
+                    width: '100%',
+                    color: '#ff7676',
+                },
+                animateIn: {
+                    opacity: 1
+                },
+                animateOut: {
+                    opacity: 0
+                },
+                delay: 1000
+            })
 
 
         .addPage()
@@ -455,7 +504,7 @@
                     $.fn.fullpage.moveTo(1)
                 }
             })
-            .loader(3);
+            .loader(5);
 
     });
     </script>
