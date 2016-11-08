@@ -53,6 +53,15 @@ var H5 = function() {
             case 'bar':
                 component = new H5ComponentBar(name, cfg);
                 break;
+
+            case 'radar':
+                component = new H5ComponentRadar(name, cfg);
+                break;
+
+            case 'point':
+                component = new H5ComponentPoint(name, cfg);
+                break;
+
             default:
         }
         page.append(component);
