@@ -6,7 +6,7 @@
 
 .h5_component_point .point {
     display: block;
-    background: #ccc;
+    background-color: #ccc;
     position: absolute;
     border-radius: 50%;
     -webkit-opacity: 0;
@@ -23,3 +23,14 @@
 }
 
 .h5_component_point .per {}
+
+.h5_component_point_load .point {
+    -webkit-opacity: 1;
+    -webkit-transform: scale(1);
+}
+
+.h5_component_point_leave .point {
+    -webkit-opacity: 0;
+    -webkit-transform: scale(0);
+}
+

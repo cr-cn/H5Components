@@ -33,7 +33,9 @@ var H5ComponentPoint = function(name, cfg) {
                 'top': item[4]
             })
         }
-        point.css('transition', 'all 1s ' + index * .5 + 's');
+        point.css({
+            '-webkit-transition': 'all 1s ' + index * .5 + 's'
+        });
         component.append(point);
 
     });

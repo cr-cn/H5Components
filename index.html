@@ -8,20 +8,10 @@
     <script src='js/lib/jquery.js'></script>
     <script src='js/lib/jquery-ui.min.js'></script>
     <script src='js/lib/jquery.fullPage.js'></script>
-    <!-- 加载H5组件相关资源 -->
-    <script>
-    var res = [
-        'Base', 'Bar', 'Point', 'Polyline', 'Radar', 'Pie'
-    ];
-    var html = [];
-    for (i in res) {
-        html.push('<script src="js/H5Component' + res[i] + '.js"><\/script>');
-        html.push('<link rel="stylesheet" href="css/H5Component' + res[i] + '.css">');
-    }
-    document.write(html.join(''));
-    </script>
     <script src='js/H5.js'></script>
     <link rel="stylesheet" type="text/css" href="css/H5.css">
+    <!-- <script src='js/H5-loading.js'></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/H5-loading.css"> -->
     <!-- 页面逻辑的样式 -->
     <style>
     body {
@@ -93,6 +83,26 @@
         color: #fff;
     }
     </style>
+</head>
+
+<body>
+    <!-- <div class="loading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+        <div id="rate">0%</div>
+    </div> -->
+    <!-- 加载H5组件相关资源 -->
+    <script>
+    var res = [
+        'Base', 'Bar', 'Point', 'Polyline', 'Radar', 'Pie'
+    ];
+    var html = [];
+    for (i in res) {
+        html.push('<script src="js/H5Component' + res[i] + '.js"><\/script>');
+        html.push('<link rel="stylesheet" href="css/H5Component' + res[i] + '.css">');
+    }
+    document.write(html.join(''));
+    </script>
     <!-- 主要逻辑 -->
     <script>
     $(function() {
@@ -463,15 +473,8 @@
                     ['初级', .2, '#ffa3a4', 0, '-60%'],
                     ['高级', .3, '#99c1ff', '50%', '-120%']
                 ],
-
                 css: {
                     bottom: '20%'
-                },
-                animateIn: {
-                    opacity: 1
-                },
-                animateOut: {
-                    opacity: 0
                 },
                 center: true,
             })
@@ -548,13 +551,12 @@
                     $.fn.fullpage.moveTo(1)
                 }
             })
+            // .loader(['img/tail_back.png', 'img/tail_slogan.png', 'img/tail_share.png', 'img/tail_logo.png', 'img/page_caption_bg.png', 'img/page_bg.png', 'img/p1_people.png', 'img/footer.png', 'img/face_logo.png', 'img/face_img_right.png', 'img/face_img_left.png', 'img/face_bg.png', 'img/description_bg.gif', 'img/face_slogan.png']);
             .loader(7);
+
 
     });
     </script>
-</head>
-
-<body>
 </body>
 
 </html>
